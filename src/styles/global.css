@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600&display=swap');
+
+:root {
+  --font-display: 'Syne', sans-serif;
+  --font-sans: 'DM Sans', sans-serif;
+  --navy: #0f0f1a;
+  --navy-mid: #1a1a2e;
+  --amber: #f5a623;
+  --amber-light: #fbbf5a;
+  --white: #ffffff;
+  --gray-400: #94a3b8;
+  --gray-500: #64748b;
+  --gray-600: #475569;
+  --gray-900: #0f172a;
+  --gray-200: #e2e8f0;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-sans);
+  color: var(--gray-900);
+  background: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+main { padding-top: 74px; }
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* BUTTONS */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+.btn--amber { background: var(--amber); color: var(--navy-mid); }
+.btn--amber:hover { background: var(--amber-light); }
+.btn--outline { background: transparent; color: var(--gray-600); border: 1px solid var(--gray-200); }
+.btn--outline:hover { border-color: var(--navy-mid); color: var(--navy-mid); }
+.btn--outline-white { background: transparent; color: #fff; border: 1.5px solid rgba(255,255,255,0.35); }
+.btn--outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.07); }
+
+/* SECTION HELPERS */
+.section-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(22px, 3.5vw, 30px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 12px;
+  color: var(--gray-900);
+}
+.section-title--white { color: var(--white); }
+.section-sub { font-size: 14px; color: var(--gray-500); line-height: 1.75; }
+.section-sub--slate { color: var(--gray-400); }
+
+/* PAGE HERO */
+.page-hero {
+  background: var(--navy-mid);
+  padding: 80px 0 60px;
+  position: relative;
+  overflow: hidden;
+}
+.page-hero::before {
+  content: "";
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 280px; height: 280px;
+  background: radial-gradient(circle, rgba(245,166,35,0.09) 0%, transparent 65%);
+  pointer-events: none;
+}
+.page-hero__label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+.page-hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+.page-hero__sub {
+  font-size: 15px;
+  color: var(--gray-400);
+  max-width: 520px;
+  line-height: 1.72;
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 18px; }
+  main { padding-top: 74px; }
+}
+@media (max-width: 480px) {
+  .container { padding: 0 14px; }
+}
+
+/* ── PAGE HERO TEXT — fix invisible text on dark background ── */
+.page-hero-label {
+  display: block;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 12px;
+}
+.page-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(26px, 4vw, 40px);
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 14px;
+  line-height: 1.1;
+}
+.page-hero-subtitle {
+  font-size: 15px;
+  color: rgba(255,255,255,0.72);
+  max-width: 540px;
+  line-height: 1.72;
+}
+
+/* ── LEGACY CSS VARIABLE ALIASES (compatibility for old pages) ── */
+:root {
+  --font-body: 'DM Sans', sans-serif;
+  --text: #0f172a;
+  --text-light: #64748b;
+  --slate: #94a3b8;
+  --slate-light: #e2e8f0;
+  --slate-dark: #475569;
+  --amber-pale: #fff8eb;
+  --error: #ef4444;
+  --radius: 8px;
+  --radius-lg: 12px;
+  --shadow-lg: 0 20px 60px rgba(0,0,0,0.12);
+  --transition: 0.2s ease;
+}
+
+/* ── LEGACY CLASS ALIASES ── */
+.section { padding: 80px 0; }
+.section--dark { background: var(--navy-mid); padding: 80px 0; }
+.section--grey { background: #f8fafc; padding: 80px 0; }
+.section-subtitle {
+  font-size: 15px;
+  color: var(--gray-500);
+  line-height: 1.75;
+  max-width: 540px;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  transition: all 0.2s;
+  background: var(--amber);
+  color: var(--navy-mid);
+  white-space: nowrap;
+}
+.btn-primary:hover { background: var(--amber-light); }
+.center { text-align: center; }

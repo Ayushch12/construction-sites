@@ -1,0 +1,46 @@
+.legal-content {
+  max-width: 800px;
+}
+
+.legal-section {
+  margin-bottom: 48px;
+}
+
+.legal-section h2 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid var(--amber-pale);
+}
+
+.legal-section p {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+
+.legal-section ul {
+  margin: 12px 0 16px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.legal-section ul li {
+  font-size: 15px;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+.legal-section a {
+  color: var(--amber);
+  text-decoration: underline;
+}
+
+.legal-section a:hover {
+  color: var(--navy);
+}
